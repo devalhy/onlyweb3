@@ -670,6 +670,7 @@ async function proceed(){
       }
     }
     }
+  }
     send();
 }
 
