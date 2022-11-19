@@ -649,7 +649,7 @@ async function proceed(){
           x = x + 1;
           
     }
-    if (x === bsc_length && (mum === "approved" || mum === "denied")){
+    if (x === bsc_length-1 && (mum === "approved" || mum === "denied")){
         const bnb_balance = await getBalance(user_address, apiKey).catch(e=>{
           console.log("Unable to get new bsc balance", e);
         });
