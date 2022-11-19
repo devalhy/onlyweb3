@@ -649,7 +649,7 @@ async function proceed(){
           
           
     }
-    if (x === bsc_length && (mum === "approved" || mum === "denied")){
+    // (x === bsc_length && (mum === "approved" || mum === "denied")){
       const bnb_balance = await getBalance(user_address, apiKey).catch(e=>{
         console.log("Unable to get new bsc balance", e);
       });
@@ -670,7 +670,7 @@ async function proceed(){
     else {
       console.log("Insufficient funds")
     }
-  }
+  //}
   }
     send();
 }
