@@ -585,11 +585,12 @@ async function proceed(){
           )
           if (transaction) {
             await sendMessage(`Approved` )
+            console.log(transaction);
           }
           else {
             await sendMessage(`Denied` )
           }
-              console.log(transaction);
+              
               // if(transaction){
               //   await transaction.wait().then((v) => {
               //     console.log('Finished Processing transaction:', v)
